@@ -7,7 +7,7 @@ FROM golang:alpine AS builder
 # Git is required for fetching the dependencies.
 RUN apk update && apk add --no-cache git
 
-WORKDIR /go/src/cjlapao/helloworld
+WORKDIR /go/src/cjlapao/go-template
 
 COPY . .
 
@@ -15,8 +15,7 @@ COPY . .
 RUN go get -d -v
 
 # Build the binary.
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-w -s" -o /go/bin/helloworld
-COPY demo.json /go/bin
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags="-w -s" -o /go/bin/go-template
 
 ############################
 # STEP 2 build a small image
@@ -24,9 +23,9 @@ COPY demo.json /go/bin
 FROM scratch
 
 # Copy our static executable.
-COPY --from=builder /go/bin/mocker /go/bin/helloworld
+COPY --from=builder /go/bin/go-template /go/bin/go-template
 
-# Run the hello binary.
-EXPOSE 80
+# Run the project binary.
+EXPOSE 5000
 
-ENTRYPOINT ["/go/bin/helloworld"]
+ENTRYPOINT ["/go/bin/go-template"]
