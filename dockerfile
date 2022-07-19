@@ -11,6 +11,8 @@ WORKDIR /go/src/cjlapao/go-template
 
 COPY . .
 
+WORKDIR /go/src/cjlapao/go-template/src
+
 # Using go get.
 RUN go get -d -v
 
@@ -26,6 +28,6 @@ FROM scratch
 COPY --from=builder /go/bin/go-template /go/bin/go-template
 
 # Run the project binary.
-EXPOSE 5000
+EXPOSE 80
 
 ENTRYPOINT ["/go/bin/go-template"]

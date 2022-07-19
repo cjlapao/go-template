@@ -8,21 +8,13 @@ import (
 	"github.com/cjlapao/common-go/execution_context"
 	"github.com/cjlapao/common-go/helper"
 	"github.com/cjlapao/common-go/version"
-	"github.com/cjlapao/go-template/startup"
 )
 
+var ver = "0.0.0"
 var services = execution_context.Get().Services
 
 func main() {
-	services.Version.Name = "GoLang Template"
-	services.Version.Author = "Carlos Lapao"
-	services.Version.License = "MIT"
-
-	services.Version.Major = 0
-	services.Version.Minor = 0
-	services.Version.Build = 0
-	services.Version.Rev = 1
-
+	SetVersion()
 	getVersion := helper.GetFlagSwitch("version", false)
 	if getVersion {
 		format := helper.GetFlagValue("o", "json")
@@ -48,5 +40,21 @@ func main() {
 	defer func() {
 	}()
 
-	startup.Init()
+	Init()
+}
+
+func Init() {
+}
+
+func SetVersion() {
+	services.Version.Name = "GoLang Template"
+	services.Version.Author = "Carlos Lapao"
+	services.Version.License = "MIT"
+	strVer, err := version.FromString(ver)
+	if err == nil {
+		services.Version.Major = strVer.Major
+		services.Version.Minor = strVer.Minor
+		services.Version.Build = strVer.Build
+		services.Version.Rev = strVer.Rev
+	}
 }
