@@ -14,4 +14,4 @@ required Visual studio tasks for debugging and running.
 It also contains the dockerfile to quickly run it in docker.
 
 You will need to update some internal files with the project name you are working on, you can
-find these changes on the [how to](HOW_TO.md) file in the repo.
+find these changes on the [how to](/docs/how_to/index/) file in the repo.
