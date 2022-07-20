@@ -1,5 +1,5 @@
 title: Golang Project Template
-theme: just-the-docs
+remote-theme: just-the-docs/just-the-docs
 logo: "https://common-go.carloslapao.com/images/logo.png"
 search_enabled: true
 aux_links:
