@@ -9,9 +9,11 @@ WORKDIR /usr/src/app
 COPY .  /usr/src/app
 
 COPY Gemfile.local /usr/src/app/Gemfile
+RUN rm _config.yml
+COPY _config.docker.yml /usr/src/app/_config.yml
 
 RUN gem install bundler && bundle install
 
 EXPOSE 4000
 
-ENTRYPOINT [ "jekyll", "serve" ]
+ENTRYPOINT [ "jekyll", "serve", "--host", "0.0.0.0", "--livereload" ]
