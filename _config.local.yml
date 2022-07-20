@@ -1,6 +1,8 @@
 title: Golang Project Template
 theme: just-the-docs
 logo: "https://common-go.carloslapao.com/images/logo.png"
+url: "http://localhost"
+baseurl: ""
 search_enabled: true
 permalink: pretty
 exclude: [

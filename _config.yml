@@ -1,6 +1,7 @@
 title: Golang Project Template
 remote_theme: just-the-docs/just-the-docs
 logo: "https://common-go.carloslapao.com/images/logo.png"
+url: "https://cjlapao.github.io/go-templates"
 search_enabled: true
 permalink: pretty
 exclude: [
@@ -9,6 +10,8 @@ exclude: [
   "*.gem", 
   "Gemfile", 
   "Gemfile.lock", 
+  "dockerfile", 
+  "docker-compose.yml", 
   "package.json", 
   "package-lock.json",  
   "script/", "LICENSE.txt", 
