@@ -91,6 +91,3 @@ jobs:
     - name: Upload changes
       if: ${{ inputs.bump_version == true}}
       uses: stefanzweifel/git-auto-commit-action@v4
-      with:
-        create_branch: true
-        branch: version-${{ steps.tag_version.outputs.new_tag }}
