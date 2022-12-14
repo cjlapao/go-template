@@ -1,0 +1,11 @@
+version: '3.7'
+name: go-template
+services:
+  go-template:
+    image: ${DOCKER_REGISTRY-}go-template
+    ports:
+      - 5000:80
+    build:
+      context: '.'
+      dockerfile: 'dockerfile'
+
