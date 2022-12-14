@@ -94,6 +94,5 @@ jobs:
       with:
         commit_user_name: github-actions
         commit_user_email: github-actions@github.com
-        commit_author: github-actions
         # create_branch: true
         # branch: version-${{ steps.tag_version.outputs.new_tag }}
