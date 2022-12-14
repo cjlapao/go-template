@@ -10,4 +10,5 @@ You will need to change some files to personalize the project, below is a list o
 * Update the main.go with the package name and version
 * Update dockerfile to change the name of the project
 * Update the .github/workflows to the new package name
+* Enable Docker/Release/Helm deployments in wht ci workflow as needed
 * Update your docker secret in the github if you want to build dockers
