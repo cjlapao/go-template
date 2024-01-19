@@ -13,9 +13,11 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
-*.env
 bin/*
 .jekyll-cache/*
 _site/*
 *.override*
 *.personal*
+*.local*
+/out/**/*
+/coverage/**/*
